@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
-import Pagination from '../Pagination';
-import data from './data/mock-data.json';
-import './style.scss';
+import React, { useState, useMemo } from "react";
+import Pagination from "../Pagination";
+import data from "./data/mock-data.json";
+import "./style.scss";
 
-let PageSize = 4;
+let PageSize = 5;
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +27,7 @@ export default function App() {
           </tr>
         </thead>
         <tbody>
-          {currentTableData.map(item => {
+          {currentTableData.map((item) => {
             return (
               <tr>
                 <td>{item.id}</td>
@@ -45,7 +45,7 @@ export default function App() {
         currentPage={currentPage}
         totalCount={data.length}
         pageSize={PageSize}
-        onPageChange={page => setCurrentPage(page)}
+        onPageChange={(page) => setCurrentPage(page)}
       />
     </>
   );
