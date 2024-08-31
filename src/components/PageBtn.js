@@ -1,5 +1,9 @@
-const PageBtn = () => {
-  return <div className="">This is new btn</div>;
+const PageBtn = ({ title, handleClick }) => {
+  return (
+    <div className="" onClick={handleClick}>
+      {title}
+    </div>
+  );
 };
 
 export default PageBtn;
