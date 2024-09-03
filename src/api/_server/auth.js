@@ -59,7 +59,6 @@ export function updateEnergy(username, energy) {
   };
 }
 export function updateTap(username, tap) {
-  // console.log("------>", tap);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateTap/${username}`, {
