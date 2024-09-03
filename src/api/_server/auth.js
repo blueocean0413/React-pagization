@@ -14,21 +14,20 @@ export function getWallet(username) {
   };
 }
 
-// export function insertWallet(username: string) {
-//   // console.log("insertWallet function =>", username);
-//   return async () => {
-//     try {
-//       const response = await axios.post("/wallet/add", {
-//         username: username,
-//       });
-//       if (response.status === 200)
-//         dispatch(wallet?.actions?.addWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       // dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function insertWallet(username) {
+  // console.log("insertWallet function =>", username);
+  return async () => {
+    try {
+      const response = await axios.post("/wallet/add", {
+        username: username,
+      });
+      if (response.status === 200)
+        dispatch(wallet.actions.addWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
 // export function updateWallet(
 //   username: string,
 //   totalPoint: number,
