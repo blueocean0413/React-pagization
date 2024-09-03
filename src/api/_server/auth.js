@@ -28,27 +28,22 @@ export function insertWallet(username) {
     }
   };
 }
-// export function updateWallet(
-//   username: string,
-//   totalPoint: number,
-//   balance: number,
-//   energy: number
-// ) {
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/update/${username}`, {
-//         totalPoint: totalPoint,
-//         balance: balance,
-//         energy: energy,
-//       });
-//       // console.log(response);
-//       dispatch(wallet?.actions?.updateWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function updateWallet(username, totalPoint, balance, energy) {
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/update/${username}`, {
+        totalPoint: totalPoint,
+        balance: balance,
+        energy: energy,
+      });
+      // console.log(response);
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 // export function updateEnergy(username: string, energy: number) {
 //   // console.log("updateEnergy function", energy);
 //   return async () => {
