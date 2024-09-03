@@ -44,50 +44,49 @@ export function updateWallet(username, totalPoint, balance, energy) {
     }
   };
 }
-// export function updateEnergy(username: string, energy: number) {
-//   // console.log("updateEnergy function", energy);
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/updateEnergy/${username}`, {
-//         energy: energy,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
-// export function updateTap(username: string, tap: number) {
-//   // console.log("------>", tap);
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/updateTap/${username}`, {
-//         tap: tap,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function updateEnergy(username, energy) {
+  // console.log("updateEnergy function", energy);
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateEnergy/${username}`, {
+        energy: energy,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
+export function updateTap(username, tap) {
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateTap/${username}`, {
+        tap: tap,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 
-// export function buyBonusCard(username: string, token: number) {
-//   // console.log("buyBonusCard =>");
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/buyBonusCard/${username}`, {
-//         passItemLevel: 1, // tap: tap,
-//         token: token,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function buyBonusCard(username, token) {
+  // console.log("buyBonusCard =>");
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/buyBonusCard/${username}`, {
+        passItemLevel: 1, // tap: tap,
+        token: token,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 
 // export function removeBonusCard(
 //   username: string,
