@@ -72,21 +72,21 @@ export function updateTap(username, tap) {
   };
 }
 
-// export function buyBonusCard(username: string, token: number) {
-//   // console.log("buyBonusCard =>");
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/buyBonusCard/${username}`, {
-//         passItemLevel: 1, // tap: tap,
-//         token: token,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function buyBonusCard(username, token) {
+  // console.log("buyBonusCard =>");
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/buyBonusCard/${username}`, {
+        passItemLevel: 1, // tap: tap,
+        token: token,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 
 // export function removeBonusCard(
 //   username: string,
