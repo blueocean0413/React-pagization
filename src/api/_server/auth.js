@@ -118,19 +118,19 @@ export function updateLimit(username, limit) {
     }
   };
 }
-// export function updateBalance(username: string, balance: number) {
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/updateBalance/${username}`, {
-//         balance: balance,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function updateBalance(username, balance) {
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateBalance/${username}`, {
+        balance: balance,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 // export function addFriend(username: string) {
 //   return async () => {
 //     try {
