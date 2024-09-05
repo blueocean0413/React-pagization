@@ -104,20 +104,20 @@ export function removeBonusCard(username, total, token) {
   };
 }
 
-// export function updateLimit(username: string, limit: number) {
-//   // console.log("------>", limit);
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/updateLimit/${username}`, {
-//         limit: limit,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function updateLimit(username, limit) {
+  // console.log("------>", limit);
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/updateLimit/${username}`, {
+        limit: limit,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 // export function updateBalance(username: string, balance: number) {
 //   return async () => {
 //     try {
