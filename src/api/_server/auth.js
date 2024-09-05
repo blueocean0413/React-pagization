@@ -88,25 +88,21 @@ export function buyBonusCard(username, token) {
   };
 }
 
-// export function removeBonusCard(
-//   username: string,
-//   total: number,
-//   token: number
-// ) {
-//   // console.log("removeBonusCard =>");
-//   return async () => {
-//     try {
-//       const response = await axios.post(`/wallet/removeBonusCard/${username}`, {
-//         total: total,
-//         token: token,
-//       });
-//       dispatch(wallet?.actions?.updateWalletSuccess(response?.data));
-//     } catch (error) {
-//       console.log(error);
-//       dispatch(wallet?.actions?.hasError(error));
-//     }
-//   };
-// }
+export function removeBonusCard(username, total, token) {
+  // console.log("removeBonusCard =>");
+  return async () => {
+    try {
+      const response = await axios.post(`/wallet/removeBonusCard/${username}`, {
+        total: total,
+        token: token,
+      });
+      dispatch(wallet.actions.updateWalletSuccess(response.data));
+    } catch (error) {
+      console.log(error);
+      dispatch(wallet.actions.hasError(error));
+    }
+  };
+}
 
 // export function updateLimit(username: string, limit: number) {
 //   // console.log("------>", limit);
